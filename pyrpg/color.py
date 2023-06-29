@@ -2,5 +2,8 @@ from abc import ABC, abstractmethod
 
 class Color(ABC):
 
-    def __init__(self) -> None:
-        ...
+    @property
+    def header(self): ...
+
+    @property
+    def ender(self): ...
