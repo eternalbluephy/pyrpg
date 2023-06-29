@@ -3,7 +3,16 @@ from abc import ABC, abstractmethod
 class Color(ABC):
 
     @property
-    def header(self): ...
+    @abstractmethod
+    def header(self) -> str:
+        '''
+        The header of the ANSI color code.
+        '''
+        pass
 
     @property
-    def ender(self): ...
+    @abstractmethod
+    def end(self):
+        '''
+        The end of the ANSI color code.
+        '''
