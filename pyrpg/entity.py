@@ -1,18 +1,22 @@
 from abc import ABC, abstractmethod
 from json import load
 from typing import Any
-from attr import Attr
+from .attr import Attr
 
 class Entity(ABC):
     '''
     Entity is a basic model for every mob, character, enemy or customized creature. It doesn't contains any specific data, but some methods to load and  get data.
     '''
-    def get_data(self, name: str) -> Attr | None:
+
+    def __init__(self) -> None:
+        self.attrs: dict[str, Attr] = {}
+
+    def get_attr(self, name: str) -> Attr | None:
         '''
-        Get the entity's data according name.
+        Get the entity's attribute according name.
         Args:
             name(str): the name of the data
         Return:
-            The value of the data. If the entity doesn't contain the data, it will return None.
+            The attribute. If the entity doesn't contain the data, it will return None.
         '''
-        return self.__dict__.get(name)
+        return self.attrs.get(name)
