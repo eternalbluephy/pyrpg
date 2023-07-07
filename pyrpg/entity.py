@@ -9,7 +9,7 @@ class Entity(ABC):
     '''
 
     def __init__(self) -> None:
-        self.attrs: dict[str, Attr] = {}
+        self._attrs: dict[str, Attr] = {}
 
     def get_attr(self, name: str) -> Attr | None:
         '''
@@ -19,4 +19,4 @@ class Entity(ABC):
         Return:
             The attribute. If the entity doesn't contain the data, it will return None.
         '''
-        return self.attrs.get(name)
+        return self._attrs.get(name)

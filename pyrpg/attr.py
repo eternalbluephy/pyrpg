@@ -7,7 +7,9 @@ class Attr:
         Create a attribute with a value.
         Args:
             name(str): The name of the attribute.
-            value(Any): The value of the attribute, can be any type. Specifically, when the type is int or float, you can set the upper and the lower of the value. Default to None.
+            value(Any): The value of the attribute, can be any type.
+                Specifically, when the type is int or float, you can set 
+                the upper and the lower of the value. Default to None.
         '''
         self.name = name
         self.value = value
